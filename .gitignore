@@ -1,0 +1,19 @@
+# Files and directories to be ignored by Git
+
+# Node.js
+/node_modules/
+/dist/
+
+# Build artifacts
+/coverage/
+
+# TypeScript
+*.tsbuildinfo
+
+# Editor and IDE files
+/.vscode/
+/.idea/
+/.vs/
+
+# Miscellaneous
+.DS_Store

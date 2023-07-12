@@ -1,0 +1,18 @@
+# Files and directories to be ignored when publishing to npm
+
+# Source code
+/src/
+/tsconfig.json
+/.vscode/
+
+# Development and build artifacts
+/node_modules/
+/dist/
+
+# Configuration files
+/.prettierrc
+
+# Test files and directories
+/__tests__/
+/coverage/
+/jest.config.js
