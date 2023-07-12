@@ -1,5 +1,5 @@
 {
-  "name": "uuid-generator",
+  "name": "uuid-wand",
   "version": "1.0.0",
   "description": "A UUID generator library for TypeScript",
   "main": "dist/src/index.js",
