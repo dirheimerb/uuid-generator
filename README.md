@@ -2,7 +2,12 @@
 
 UUID Wand is a TypeScript library that provides functionality to generate and validate UUIDs (Universally Unique Identifiers).
 
+[Docs](https://dirheimerb.github.io/uuid-generator)
+
+## Table of Contents
+
 - [UUID Wand](#uuid-wand)
+  - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
     - [Generating UUIDs](#generating-uuids)
