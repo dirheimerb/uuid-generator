@@ -1,3 +1,5 @@
+uuid-wand / [Exports](modules.md)
+
 # UUID Wand
 
 UUID Wand is a TypeScript library that provides functionality to generate and validate UUIDs (Universally Unique Identifiers).

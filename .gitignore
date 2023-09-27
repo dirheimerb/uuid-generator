@@ -6,7 +6,7 @@
 
 # Build artifacts
 /coverage/
-
+pnpm-lock.yaml
 # TypeScript
 *.tsbuildinfo
 
