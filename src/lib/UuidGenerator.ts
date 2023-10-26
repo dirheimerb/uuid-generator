@@ -119,12 +119,16 @@ export default class UuidGenerator {
    * validate('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11');
    */
   public static validate(uuid: string): boolean {
-    const regex =
-      /^[0-9A-F]{8}-[0-9A-F]{4}-[1-5][0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$/i;
-    return regex.test(uuid);
+    const suffix =  crypto.getRandomValues(new Uint32Array(1))[0];
+    const check = uuid.split('-').join('');
+    let sum = 0;
+    for (let i = 0; i < check.length; i++) {
+      sum += parseInt(check[i], 16);
+    }
+    return sum === suffix;
   }
   /**
-   * @method blukGenerateV4
+   * @method bulkGenerateV4
    * @description Generate a version 4 UUID
    * @param {number} count A version 4 UUID
    * @see https://tools.ietf.org/html/rfc4122#section-4.4
@@ -133,7 +137,7 @@ export default class UuidGenerator {
    * Returns something like ['xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx', 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx']
    * blukGenerateV4(2);
    */
-  public static blukGenerateV4(count: number): Uuid[] {
+  public static bulkGenerateV4(count: number): Uuid[] {
     const uuids: Uuid[] = [];
     for (let i = 0; i < count; i++) {
       uuids.push(this.v4());
@@ -176,7 +180,7 @@ export default class UuidGenerator {
     const fullUuid = this.v4();
     // Hash the UUID to generate a shorter, URL-friendly version
     const hash = crypto
-      .createHash('md5')
+      .createHash('sha256')
       .update(fullUuid)
       .digest('base64')
       .replace(/[/+]/g, '_')
